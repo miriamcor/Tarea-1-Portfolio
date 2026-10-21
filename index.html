@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miriam Correa — Portfolio de Diseño Gráfico</title>
+  <meta name="description" content="Portfolio de diseño gráfico de Miriam Correa: diseño de identidad, ilustración y sistemas visuales.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace', 'Courier New'],
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+          },
+          colors: {
+            brand: {
+              cream: '#faf8f5',
+              darkteal: '#184643',
+              lime: '#d4f29e',
+              coral: '#fa6e4f',
+              sky: '#e2f4f7',
+              sand: '#ece1db',
+              folder: '#fff8ec',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #faf8f5;
+      color: #1f2937;
+    }
+
+    /* Pixelated rendering for retro icons */
+    .pixelated {
+      image-rendering: pixelated;
+    }
+
+    /* Folder Tab with trapezoid / angled shoulders */
+    .folder-tab-shape {
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 100%, 0% 100%);
+    }
+
+    /* Custom shadow for Polaroid */
+    .polaroid-card {
+      box-shadow: 0 16px 32px -8px rgba(18, 45, 43, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #faf8f5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#d4f29e] selection:text-[#184643] overflow-x-hidden">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="w-full bg-[#faf8f5] px-8 sm:px-16 pt-9 pb-6 flex items-center justify-between max-w-7xl mx-auto">
+    <!-- Brand Pixel Cross Logo (Left) -->
+    <a href="#" class="inline-block transition-transform duration-200 hover:scale-105" aria-label="Inicio Miriam Correa">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="11" y="0" width="12" height="6" fill="#184643"/>
+        <rect x="5" y="6" width="24" height="6" fill="#184643"/>
+        <rect x="0" y="12" width="34" height="10" fill="#184643"/>
+        <rect x="5" y="22" width="24" height="6" fill="#184643"/>
+        <rect x="11" y="28" width="12" height="6" fill="#184643"/>
+      </svg>
+    </a>
+
+    <!-- Nav Links (Right) -->
+    <nav class="flex items-center space-x-10 font-mono text-[13px] tracking-[0.2em] text-[#334155] uppercase font-bold">
+      <a href="#work" class="hover:text-[#184643] transition-colors">WORK</a>
+      <a href="#play" class="hover:text-[#184643] transition-colors">PLAY</a>
+      <a href="#info" class="hover:text-[#184643] transition-colors">INFO</a>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="w-full bg-[#faf8f5] pt-12 pb-24 px-6 flex flex-col items-center justify-center relative">
+    <div class="relative flex flex-col items-center max-w-xl w-full">
+      
+      <!-- Folded Accordion Ribbon Graphics Behind Main Badge -->
+      <div class="absolute -top-12 left-6 sm:left-12 w-36 h-28 pointer-events-none -z-0 opacity-80">
+        <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 18 L50 4 V92 L20 106 Z" fill="#c4e5ec"/>
+          <path d="M50 4 L80 18 V106 L50 92 Z" fill="#b0dae3"/>
+          <path d="M80 18 L110 4 V92 L80 106 Z" fill="#c4e5ec"/>
+          <path d="M110 4 L140 18 V106 L110 92 Z" fill="#9ecfd9"/>
+        </svg>
+      </div>
+
+      <!-- Hero Badge Cluster -->
+      <div class="relative z-10 w-full flex flex-col items-center">
+        
+        <!-- Top Lime Badge: Miriam -->
+        <div class="bg-[#d4f29e] border border-[#c4e883] px-12 sm:px-16 py-3.5 sm:py-4 rounded-[26px] sm:rounded-[34px] shadow-sm relative">
+          <h1 class="text-5xl sm:text-7xl font-normal tracking-tight text-[#184643] leading-none">
+            Miriam
+          </h1>
+
+          <!-- Coral Circle with White Pixel Cross (overlapping bottom left) -->
+          <div class="absolute -bottom-6 -left-7 sm:-left-9 w-18 h-18 sm:w-20 sm:h-20 bg-[#fa6e4f] rounded-full flex items-center justify-center shadow-md z-30">
+            <svg width="24" height="24" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="11" y="0" width="12" height="6" fill="#ffffff"/>
+              <rect x="5" y="6" width="24" height="6" fill="#ffffff"/>
+              <rect x="0" y="12" width="34" height="10" fill="#ffffff"/>
+              <rect x="5" y="22" width="24" height="6" fill="#ffffff"/>
+              <rect x="11" y="28" width="12" height="6" fill="#ffffff"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Dark Teal Pill Badge: Correa (overlapping bottom right) -->
+        <div class="bg-[#184643] px-10 sm:px-14 py-3.5 sm:py-4 rounded-[28px] sm:rounded-[34px] shadow-md z-20 self-end -mt-3.5 mr-[-20px] sm:mr-[-40px]">
+          <span class="text-4xl sm:text-6xl font-normal tracking-normal text-white leading-none">
+            Correa
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Hero Subtitle Tagline (Typewriter Monospace aligned left under cluster) -->
+      <div class="w-full mt-7 pl-6 sm:pl-10 self-start">
+        <p class="font-mono text-xs sm:text-[13px] text-[#42504e] leading-[1.65]">
+          I design illustrations,<br>
+          identities, and systems for<br>
+          culture, tech, and stories.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: BIO & STATEMENT ==================== -->
+  <section class="w-full bg-[#e2f4f7] relative pt-16 pb-20 px-6 sm:px-12">
+    <!-- Folder tab at top right of center transitioning into cyan -->
+    <div class="absolute -top-7 left-[52%] w-44 sm:w-52 h-7 bg-[#e2f4f7] rounded-t-xl folder-tab-shape"></div>
+
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative">
+      
+      <!-- "Made in Framer" Floating Badge (Top Right) -->
+      <div class="absolute -top-8 right-0 hidden sm:flex items-center gap-2 bg-white/95 px-3 py-1.5 rounded-lg text-[12px] font-sans font-medium text-gray-800 shadow-sm border border-slate-200/60">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/>
+        </svg>
+        <span class="font-semibold text-gray-900">Made in Framer</span>
+      </div>
+
+      <!-- Polaroid Photo Card (Left) -->
+      <div class="bg-white p-3.5 pb-4 rounded-[20px] polaroid-card transform -rotate-[2deg] hover:rotate-0 transition-transform duration-300 max-w-[280px] w-full flex-shrink-0">
+        <!-- Photo Placeholder with realistic portrait styling -->
+        <div class="w-full aspect-[4/4.8] rounded-xl overflow-hidden bg-[#1c3835] relative">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+               alt="Miriam Correa — Diseñadora Gráfica" 
+               class="w-full h-full object-cover"
+               onerror="this.src='https://placehold.co/400x480/184643/ffffff?text=Miriam+Correa'">
+        </div>
+        
+        <!-- Polaroid Caption: Pin Icon & Monospace City -->
+        <div class="flex items-center gap-2.5 mt-3 px-1">
+          <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 0C3.134 0 0 3.134 0 7C0 11.5 7 17 7 17C7 17 14 11.5 14 7C14 3.134 10.866 0 7 0ZM7 9.5C5.619 9.5 4.5 8.381 4.5 7C4.5 5.619 5.619 4.5 7 4.5C8.381 4.5 9.5 5.619 9.5 7C9.5 8.381 8.381 9.5 7 9.5Z" fill="#184643"/>
+          </svg>
+          <span class="font-mono text-xs font-bold tracking-wider text-[#184643] uppercase">
+            BLR, IN
+          </span>
+        </div>
+      </div>
+
+      <!-- Statement Headline (Right) -->
+      <div class="flex-1 md:pl-6">
+        <h2 class="text-3xl sm:text-4xl md:text-[46px] font-normal leading-[1.22] tracking-[-0.015em] text-[#184643] max-w-xl">
+          I help brands tell<br>
+          compelling stories<br>
+          through visual design.
+        </h2>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: THE BIG PROJECTS FOLDER ==================== -->
+  <section id="work" class="w-full bg-[#ece1db] py-16 sm:py-24 px-4 sm:px-8">
+    
+    <!-- Outer Card container with folder tab top left -->
+    <div class="max-w-4xl mx-auto relative pt-8">
+      
+      <!-- Folder Tab on the Top Left -->
+      <div class="absolute top-0 left-6 sm:left-10 w-44 sm:w-52 h-8 bg-[#fff8ec] rounded-t-2xl"></div>
+
+      <!-- Folder Inner Body (Cream Container) -->
+      <div class="bg-[#fff8ec] rounded-3xl rounded-tl-none p-5 sm:p-10 md:p-14 shadow-sm space-y-14">
+        
+        <!-- ================= PROJECT 1: Juspay Illustration System ================= -->
+        <article class="group">
+          <!-- Main Card Container -->
+          <div class="bg-[#1f2229] rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] relative flex items-center justify-center p-4 sm:p-8 shadow-inner">
+            <!-- Graphical composition inside: 3 feature mockups -->
+            <div class="w-full h-full flex items-center justify-center gap-3 sm:gap-6">
+              
+              <!-- Card 1: Green ATM Terminal -->
+              <div class="bg-[#dcfce7] rounded-2xl p-4 sm:p-6 w-1/3 aspect-[4/5] flex flex-col items-center justify-center shadow-lg border border-emerald-100">
+                <div class="w-14 h-16 sm:w-20 sm:h-24 bg-[#15803d] rounded-2xl flex flex-col items-center justify-between p-2.5 shadow-md">
+                  <div class="w-8 h-1.5 sm:w-12 sm:h-2 bg-emerald-200 rounded-full"></div>
+                  <span class="text-white text-xl sm:text-3xl font-bold leading-none">$</span>
+                  <div class="w-6 h-1 sm:w-10 sm:h-1.5 bg-emerald-300 rounded-full"></div>
+                </div>
+              </div>
+
+              <!-- Card 2: Purple Mobile Interface with Fingerprint -->
+              <div class="bg-[#8b5cf6] rounded-2xl p-3 sm:p-5 w-1/3 aspect-[4/5] flex flex-col items-center justify-center shadow-lg relative overflow-hidden">
+                <div class="w-16 h-28 sm:w-24 sm:h-40 bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 flex flex-col items-center justify-around p-2.5 shadow-md">
+                  <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-full border-2 border-white/70 flex items-center justify-center">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M12 2a10 10 0 0 0-10 10v2a10 10 0 0 0 10 10 10 10 0 0 0 10-10v-2a10 10 0 0 0-10-10z"/>
+                    </svg>
+                  </div>
+                  <div class="space-y-1.5 w-full px-1">
+                    <div class="h-1.5 sm:h-2 bg-white/60 rounded-full w-full"></div>
+                    <div class="h-1.5 sm:h-2 bg-white/40 rounded-full w-3/4"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: Sky Blue Analytics Dashboard with Bell Badge -->
+              <div class="bg-[#93c5fd] rounded-2xl p-4 sm:p-6 w-1/3 aspect-[4/5] flex flex-col items-center justify-center shadow-lg relative border border-blue-200">
+                <div class="w-full bg-white rounded-xl p-3 sm:p-4 shadow-md space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div class="w-8 h-2 sm:w-12 sm:h-2.5 bg-blue-300 rounded"></div>
+                    <!-- Notification Bell with Dot -->
+                    <div class="relative">
+                      <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                      </div>
+                      <div class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full"></div>
+                    </div>
+                  </div>
+                  <!-- Mini Chart Curve -->
+                  <svg viewBox="0 0 70 30" class="w-full h-8 sm:h-12" fill="none">
+                    <path d="M0 22 Q 20 6, 40 18 T 70 5" stroke="#2563eb" stroke-width="3" stroke-linecap="round" fill="none"/>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Floating Translucent Arrow Button -->
+            <button class="absolute bottom-5 left-5 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/70 transition-all shadow-md group-hover:scale-105" aria-label="Abrir Juspay Illustration System">
+              <span class="text-base font-light">↗</span>
+            </button>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-4">
+            <p class="font-mono text-xs sm:text-[13px] text-gray-500 tracking-wider">Juspay</p>
+            <h3 class="text-base sm:text-lg font-medium text-gray-900 mt-0.5">Juspay Illustration System</h3>
+          </div>
+        </article>
+
+
+        <!-- ================= PROJECT 2: Juspay Hyperswitch ================= -->
+        <article class="group">
+          <div class="bg-[#1b1c21] rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] relative flex items-center justify-center p-6 sm:p-12 shadow-inner">
+            
+            <!-- Perspective Dark MacBook Mockup -->
+            <div class="relative w-full max-w-xl flex flex-col items-center">
+              <!-- Screen Frame with webcam notch -->
+              <div class="w-full bg-[#0a0b0d] rounded-t-2xl p-3 border border-slate-700/80 shadow-2xl relative">
+                <div class="w-2 h-2 bg-slate-800 rounded-full mx-auto mb-1.5 opacity-80"></div>
+                <!-- Inner Screen Content -->
+                <div class="bg-[#0f1117] rounded-lg p-5 sm:p-7 flex flex-col justify-between text-white aspect-[16/10] relative overflow-hidden border border-slate-800">
+                  <!-- Navbar -->
+                  <div class="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/80 pb-2.5">
+                    <span class="font-mono font-bold text-slate-100 tracking-wider">HYPERSWITCH</span>
+                    <div class="flex items-center gap-3 font-mono text-[10px]">
+                      <span>Docs</span>
+                      <span>Pricing</span>
+                      <span class="bg-slate-800 px-2 py-0.5 rounded text-slate-300">Login</span>
+                    </div>
+                  </div>
+                  <!-- Headline & CTAs -->
+                  <div class="my-auto max-w-xs space-y-3 z-10">
+                    <p class="text-sm sm:text-base font-medium text-slate-200 leading-snug">
+                      Reduce Up to 10% on your Payment Processing Costs
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <button class="bg-blue-600 hover:bg-blue-500 text-white text-[11px] px-3.5 py-1.5 rounded font-medium shadow">Explore Hyperswitch</button>
+                      <button class="bg-slate-800 text-slate-300 text-[11px] px-3 py-1.5 rounded">Demo</button>
+                    </div>
+                  </div>
+                  <!-- 3D Isometric Server Cubes on Right -->
+                  <div class="absolute right-3 bottom-3 w-32 h-32 opacity-85 pointer-events-none">
+                    <svg viewBox="0 0 100 100" fill="none">
+                      <polygon points="50,15 85,35 50,55 15,35" fill="#3b82f6"/>
+                      <polygon points="15,35 50,55 50,90 15,70" fill="#1d4ed8"/>
+                      <polygon points="85,35 50,55 50,90 85,70" fill="#2563eb"/>
+                      <!-- Floating mini cube -->
+                      <polygon points="75,5 92,15 75,25 58,15" fill="#60a5fa" opacity="0.9"/>
+                      <polygon points="58,15 75,25 75,42 58,32" fill="#2563eb" opacity="0.9"/>
+                      <polygon points="92,15 75,25 75,42 92,32" fill="#3b82f6" opacity="0.9"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <!-- Laptop Keyboard Base (Aluminum bevel) -->
+              <div class="w-[106%] h-3 sm:h-4 bg-gradient-to-b from-slate-500 via-slate-700 to-slate-900 rounded-b-xl shadow-xl flex items-center justify-center">
+                <div class="w-16 h-1 bg-slate-400/40 rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Floating Translucent Arrow Button -->
+            <button class="absolute bottom-5 left-5 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/70 transition-all shadow-md group-hover:scale-105" aria-label="Abrir Web, Social & Event Design">
+              <span class="text-base font-light">↗</span>
+            </button>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-4">
+            <p class="font-mono text-xs sm:text-[13px] text-gray-500 tracking-wider">Juspay Hyperswitch</p>
+            <h3 class="text-base sm:text-lg font-medium text-gray-900 mt-0.5">Web, Social & Event Design</h3>
+          </div>
+        </article>
+
+
+        <!-- ================= PROJECT 3: Picture Extinction ================= -->
+        <article class="group">
+          <div class="bg-[#0b100d] rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] relative flex flex-col justify-between p-6 sm:p-10 shadow-inner">
+            
+            <!-- Stage Lighting Rigging at Top -->
+            <div class="w-full flex justify-around opacity-40">
+              <div class="w-1.5 h-6 bg-slate-600"></div>
+              <div class="w-1.5 h-6 bg-slate-600"></div>
+              <div class="w-1.5 h-6 bg-slate-600"></div>
+              <div class="w-1.5 h-6 bg-slate-600"></div>
+              <div class="w-1.5 h-6 bg-slate-600"></div>
+            </div>
+
+            <!-- Glowing Cinema Green Screen -->
+            <div class="w-full max-w-xl mx-auto my-auto bg-gradient-to-br from-[#22c55e] to-[#15803d] rounded-xl p-6 sm:p-9 shadow-[0_0_60px_rgba(34,197,94,0.35)] relative overflow-hidden flex flex-col justify-center items-start border border-emerald-400/40">
+              <!-- Radial Grid Dots Background -->
+              <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#000 1.5px, transparent 1.5px); background-size: 18px 18px;"></div>
+              
+              <!-- Screen Badges -->
+              <div class="relative z-10 space-y-2.5">
+                <div class="bg-[#dcfce7] text-[#14532d] px-4 sm:px-5 py-2 rounded-lg text-xl sm:text-2xl font-bold shadow-sm inline-block tracking-tight font-sans">
+                  Facing the truth, together.
+                </div>
+                <br>
+                <div class="bg-black text-white font-mono text-xs px-3.5 py-1.5 rounded inline-block">
+                  Picture Extinction
+                </div>
+              </div>
+            </div>
+
+            <!-- Cinema Seats Silhouettes at Bottom -->
+            <div class="w-full flex justify-between gap-1 opacity-25 mt-auto">
+              <div class="h-6 flex-1 bg-slate-800 rounded-t-md"></div>
+              <div class="h-6 flex-1 bg-slate-800 rounded-t-md"></div>
+              <div class="h-6 flex-1 bg-slate-800 rounded-t-md"></div>
+              <div class="h-6 flex-1 bg-slate-800 rounded-t-md"></div>
+              <div class="h-6 flex-1 bg-slate-800 rounded-t-md"></div>
+              <div class="h-6 flex-1 bg-slate-800 rounded-t-md"></div>
+            </div>
+
+            <!-- Floating Arrow Button -->
+            <button class="absolute bottom-5 left-5 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/70 transition-all shadow-md group-hover:scale-105" aria-label="Abrir Picture Extinction">
+              <span class="text-base font-light">↗</span>
+            </button>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-4">
+            <p class="font-mono text-xs sm:text-[13px] text-gray-500 tracking-wider">Council of species</p>
+            <h3 class="text-base sm:text-lg font-medium text-gray-900 mt-0.5">Picture Extinction</h3>
+          </div>
+        </article>
+
+
+        <!-- ================= PROJECT 4: Megh Bangla ================= -->
+        <article class="group">
+          <div class="bg-[#18231c] rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] relative flex flex-col items-center justify-between p-6 sm:p-10 shadow-inner">
+            
+            <!-- Forest Texture Backdrop -->
+            <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#34d399_1.5px,transparent_1.5px)] [background-size:24px_24px]"></div>
+
+            <!-- Display Font Oval Badge at Top -->
+            <div class="relative z-10 border border-white/50 text-white/90 font-mono text-[10px] tracking-widest px-4 py-1 rounded-full uppercase">
+              DISPLAY FONT
+            </div>
+
+            <!-- Central Bengali Script Typography -->
+            <div class="relative z-10 text-center my-auto">
+              <h4 class="text-white text-6xl sm:text-8xl font-serif tracking-wide drop-shadow-md">
+                মেঘ
+              </h4>
+              <p class="text-white/85 font-serif italic text-sm sm:text-base mt-2 tracking-wide">
+                Megh + Bangla
+              </p>
+            </div>
+
+            <!-- Footer Meta in Card -->
+            <div class="relative z-10 w-full flex items-center justify-between text-[10px] font-mono text-white/60 uppercase tracking-widest">
+              <span>DESIGNED BY - DIKSHA, PRASHA, PRAGYA</span>
+              <span>©2023</span>
+            </div>
+
+            <!-- Floating Arrow Button -->
+            <button class="absolute bottom-5 left-5 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/70 transition-all shadow-md group-hover:scale-105" aria-label="Abrir Megh Bangla">
+              <span class="text-base font-light">↗</span>
+            </button>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-4">
+            <p class="font-mono text-xs sm:text-[13px] text-gray-500 tracking-wider">Type Design</p>
+            <h3 class="text-base sm:text-lg font-medium text-gray-900 mt-0.5">Megh Bangla</h3>
+          </div>
+        </article>
+
+
+        <!-- ================= PROJECT 5: Illustrations for stories ================= -->
+        <article class="group">
+          <div class="bg-black rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] relative flex items-center justify-center p-3 sm:p-6 shadow-inner">
+            
+            <!-- Comic / Zine Editorial Spread -->
+            <div class="w-full h-full bg-[#fef08a] rounded-xl p-4 sm:p-6 flex flex-col md:flex-row gap-4 border-4 border-black text-black">
+              
+              <!-- Left Comic Column -->
+              <div class="w-full md:w-1/2 border-2 border-black p-3.5 rounded-lg bg-white flex flex-col justify-between">
+                <div class="bg-[#facc15] px-2.5 py-1 border border-black font-mono font-bold text-xs inline-block self-start shadow-sm">
+                  PETS @NID
+                </div>
+                <div class="my-auto text-center font-mono text-xs text-gray-800 py-3">
+                  <span class="italic font-bold">"HOW SMALL ARE THEY?"</span>
+                  <div class="w-20 h-10 mx-auto my-2 border border-dashed border-gray-400 rounded flex items-center justify-center text-[10px] text-gray-500">
+                    [ lizard sketch ]
+                  </div>
+                </div>
+                <span class="font-mono text-[10px] text-gray-600 font-bold">#BECAUSE-</span>
+              </div>
+
+              <!-- Right Comic Column -->
+              <div class="w-full md:w-1/2 border-2 border-black p-3.5 rounded-lg bg-[#fffbeb] flex flex-col justify-between space-y-2">
+                <div class="border-b-2 border-black pb-1.5">
+                  <h5 class="font-mono font-extrabold text-[11px] sm:text-xs uppercase tracking-tight text-gray-900">
+                    PE(S)TS AND WHAT WE THINK OF THEM
+                  </h5>
+                </div>
+                <!-- Hand-drawn Style Dialog Bubbles -->
+                <div class="space-y-1.5 font-mono text-[9px] sm:text-[10px]">
+                  <div class="bg-[#fef08a] p-2 rounded border border-black/40 shadow-sm leading-tight">
+                    "Definitely pests to me! I am scared of what they represent and where they might crawl..."
+                  </div>
+                  <div class="bg-[#fef9c3] p-2 rounded border border-black/40 shadow-sm leading-tight">
+                    "Personally, I love to give pets to my soft 1ft pet lizard &lt;3"
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="font-mono text-[9px] bg-black text-white px-2.5 py-0.5 rounded font-bold">Just no</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Floating Arrow Button -->
+            <button class="absolute bottom-5 left-5 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/80 transition-all shadow-md group-hover:scale-105" aria-label="Abrir Illustrations for stories">
+              <span class="text-base font-light">↗</span>
+            </button>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-4">
+            <p class="font-mono text-xs sm:text-[13px] text-gray-500 tracking-wider">2x2/Kingfisher</p>
+            <h3 class="text-base sm:text-lg font-medium text-gray-900 mt-0.5">Illustrations for stories</h3>
+          </div>
+        </article>
+
+
+        <!-- ================= PROJECT 6: Fusepay ================= -->
+        <article class="group">
+          <div class="bg-gradient-to-r from-[#ea580c] via-[#db2777] to-[#7c3aed] rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] relative flex items-center justify-center p-4 sm:p-8 shadow-inner">
+            
+            <!-- Tropical Palm Leaves Backdrop Silhouette -->
+            <div class="absolute inset-0 opacity-15 pointer-events-none flex justify-between">
+              <svg viewBox="0 0 100 100" class="w-40 h-40 transform -rotate-45" fill="black"><path d="M0 0 Q50 20 80 80 Q20 50 0 0Z"/></svg>
+              <svg viewBox="0 0 100 100" class="w-40 h-40 transform rotate-45" fill="black"><path d="M100 0 Q50 20 20 80 Q80 50 100 0Z"/></svg>
+            </div>
+
+            <!-- Floating Cards Composition -->
+            <div class="w-full max-w-xl flex flex-col sm:flex-row items-center justify-center gap-5 relative z-10">
+              
+              <!-- Left Purple Tap Card -->
+              <div class="bg-[#8b5cf6]/90 backdrop-blur-md rounded-2xl p-4 sm:p-5 text-white shadow-xl border border-white/20 max-w-[210px] w-full space-y-3">
+                <span class="bg-white/20 text-[10px] px-2.5 py-0.5 rounded-full font-mono font-medium">One easy tap</span>
+                <div class="w-16 h-10 bg-gradient-to-tr from-pink-300 to-purple-100 rounded-md shadow-inner my-2 border border-white/40"></div>
+                <p class="text-xs font-mono font-medium tracking-wide">and you're done!</p>
+              </div>
+
+              <!-- Right White Brand Card -->
+              <div class="bg-white rounded-2xl p-5 sm:p-6 text-gray-900 shadow-2xl max-w-[260px] w-full space-y-3">
+                <div class="flex items-center gap-1.5 font-bold text-xs text-[#6b21a8]">
+                  <div class="w-2.5 h-2.5 bg-[#6b21a8] rounded-sm"></div>
+                  <span>fusecard</span>
+                </div>
+                <h5 class="text-xl sm:text-2xl font-serif text-[#581c87] leading-tight">
+                  Made for<br>Seychelles
+                </h5>
+                <p class="text-[10px] text-gray-500 font-sans leading-tight">
+                  A simpler, safer way to spend, built for everyday life.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Floating Arrow Button -->
+            <button class="absolute bottom-5 left-5 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-black/70 transition-all shadow-md group-hover:scale-105" aria-label="Abrir Fusepay">
+              <span class="text-base font-light">↗</span>
+            </button>
+          </div>
+
+          <!-- Metadata -->
+          <div class="mt-4">
+            <p class="font-mono text-xs sm:text-[13px] text-gray-500 tracking-wider">Fusepay + Project inside out</p>
+            <h3 class="text-base sm:text-lg font-medium text-gray-900 mt-0.5">Fusepay</h3>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: THE HATS I WEAR ==================== -->
+  <section id="play" class="w-full bg-[#ece1db] py-32 px-6 flex items-center justify-center">
+    <p class="font-mono text-xs sm:text-sm text-[#2b2b2b] tracking-[0.25em] uppercase font-medium">
+      The hats I wear
+    </p>
+  </section>
+
+  <!-- ==================== SECTION 5: FOOTER & LET'S CONNECT ==================== -->
+  <footer id="info" class="w-full bg-[#d4f29e] relative pt-16 pb-28 px-6 flex flex-col items-center">
+    
+    <!-- Giant Stepped Pixel Cross Icon directly overlapping the boundary -->
+    <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 z-20">
+      <svg width="96" height="96" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-sm">
+        <rect x="11" y="0" width="12" height="6" fill="#184643"/>
+        <rect x="5" y="6" width="24" height="6" fill="#184643"/>
+        <rect x="0" y="12" width="34" height="10" fill="#184643"/>
+        <rect x="5" y="22" width="24" height="6" fill="#184643"/>
+        <rect x="11" y="28" width="12" height="6" fill="#184643"/>
+      </svg>
+    </div>
+
+    <!-- Main Footer Heading -->
+    <h2 class="text-4xl sm:text-5xl md:text-[54px] font-normal text-[#184643] tracking-tight text-center mt-6 mb-10 font-sans">
+      Let's Connect
+    </h2>
+
+    <!-- Action Buttons Row -->
+    <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
+      <a href="mailto:miriam@correa.design" class="bg-white text-gray-900 px-7 py-3.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-sm hover:shadow-md hover:scale-105 transition-all flex items-center gap-1.5 border border-black/5">
+        <span>Schedule Meeting</span>
+        <span class="text-xs">↗</span>
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-7 py-3.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-sm hover:shadow-md hover:scale-105 transition-all flex items-center gap-1.5 border border-black/5">
+        <span>LinkedIn</span>
+        <span class="text-xs">↗</span>
+      </a>
+
+      <a href="https://medium.com" target="_blank" rel="noopener noreferrer" class="bg-white text-gray-900 px-7 py-3.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-sm hover:shadow-md hover:scale-105 transition-all flex items-center gap-1.5 border border-black/5">
+        <span>Medium</span>
+        <span class="text-xs">↗</span>
+      </a>
+    </div>
+
+  </footer>
+
+</body>
+</html>
